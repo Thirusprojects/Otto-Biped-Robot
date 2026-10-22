@@ -2,11 +2,11 @@
 
 This is newly written reference code, not the original project firmware. The original Nano/four-servo robot demonstrated forward and backward movement. Obstacle response and the turning gait below have not been tested on that robot.
 
-## Hardware and proposed wiring
+## Selected reference configuration
 
 Use a classic 5 V Arduino Nano (ATmega328P), four appropriately powered servos and a **front HC-SR04**, shown in the supplied circuit reference. Confirm the robot's geometry is compatible with OttoDIY's two-leg/two-foot arrangement.
 
-| Connection | Proposed Nano pin |
+| Connection | Reference Nano pin |
 |---|---|
 | Left leg servo signal | D2 |
 | Right leg servo signal | D3 |
@@ -19,7 +19,7 @@ Power the servos from a regulated supply suitable for their voltage and combined
 
 ## Supplied code versus circuit drawing
 
-The [supplied legacy example](reference/README.md) uses servo pins D2–D5, matching the default servo map below. Its ultrasonic pins depend on an unspecified legacy library. The [supplied diagram](../media/images/otto-circuit-reference.jpg) instead shows an **Uno**, servo signals D8–D11, HC-SR04 trigger D2 and echo D3. The physical project was reported as **Nano-based**. Do not combine these two maps: the default sensor D8/D9 pins remain proposed until actual wiring is confirmed. The drawing also connects servo power to the board's 5 V rail; use an appropriately rated servo supply for the actual build.
+The [supplied legacy example](reference/README.md) uses servo pins D2–D5, matching the selected servo map above. Its ultrasonic pins depend on an unspecified legacy library. The [supplied diagram](../media/images/otto-circuit-reference.jpg) instead shows an **Uno**, servo signals D8–D11, HC-SR04 trigger D2 and echo D3. The physical project was reported as **Nano-based**. The maintained sketch uses the Nano servo map and assigns trigger D8 / echo D9, avoiding the servo pins. This is a selected implementation configuration, not a recovered historical sensor connection. Follow the table above rather than mixing it with the Uno drawing. The drawing also connects servo power to the board's 5 V rail; use an appropriately rated servo supply for the actual build.
 
 ## Setup
 
