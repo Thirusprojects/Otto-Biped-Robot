@@ -1,44 +1,38 @@
 # Otto Biped Robot
 
-An Otto-style biped robot documented through six photographs. The assembly has a compact body, two articulated legs and front-mounted ultrasonic transducers.
+A small two-legged robot built with an **Arduino Nano and four servo motors**. The physical robot successfully moved **forward and backward**, demonstrating basic biped locomotion through coordinated leg and foot motion.
 
-**Portfolio:** Thiruppathi P · [Thirusprojects](https://github.com/Thirusprojects)
+![Otto biped robot](media/images/img-0624.jpg)
 
-![Otto Biped Robot — supplied project image](media/images/img-0624.jpg)
+## Hardware and operation
 
-## Project status
+Two servo-driven legs and two servo-driven feet form the walking mechanism. The Arduino Nano controls the four servos to create the movement sequence.
 
-Physical robot photographs available. No firmware or movement video was included.
+| Item | Details |
+| --- | --- |
+| Controller | Arduino Nano |
+| Actuation | Four servo motors |
+| Demonstrated movements | Forward and backward |
+| Original obstacle response | Not implemented |
 
-## Contribution
+## New obstacle-response firmware
 
-Personal assembly, design and programming contributions are awaiting confirmation.
+The original project code is no longer available. A **new reference implementation** has been added in [firmware/OttoObstacleAvoidance](firmware/OttoObstacleAvoidance). It uses the official OttoDIY library and proposes an HC-SR04 ultrasonic sensor for obstacle response.
 
-## Design and documented features
+The new code provides one-step forward/backward commands and an automatic mode that checks distance between gait cycles, turns when blocked, and stops on invalid readings. This is newly written code; obstacle avoidance and turning have **not been validated on this robot**.
 
-- Two-legged robot assembly with broad feet.
-- Yellow body/legs and black sensor housing.
-- Front-mounted ultrasonic sensing hardware visible in photographs.
+Read the [wiring, calibration and upload guide](firmware/README.md) before using it. The pin assignments are proposed, and the configuration starts locked until the wiring is checked.
 
-## Image gallery
+## Robot gallery
 
-- [Project image 1](media/images/img-0624.jpg)
-- [Project image 2](media/images/img-0625.jpg)
-- [Project image 3](media/images/img-5570.jpg)
-- [Project image 4](media/images/img-5576.jpg)
-- [Project image 5](media/images/img-5577.jpg)
-- [Project image 6](media/images/img-5578.jpg)
+![Project view 1](media/images/img-0624.jpg)
 
-## Evidence and limitations
+![Project view 2](media/images/img-0625.jpg)
 
-Walking, dancing and obstacle-response behavior cannot be established from still photographs. Controller, servo models, power supply and firmware source are not yet confirmed. The Otto name identifies the supplied project; original authorship of the underlying robot platform is not claimed.
+![Project view 3](media/images/img-5570.jpg)
 
-## Details to complete
+![Project view 4](media/images/img-5576.jpg)
 
-Confirm controller, servo count, software/library used, your modifications and the movements that worked.
+![Project view 5](media/images/img-5577.jpg)
 
-## File provenance
-
-See [asset inventory](docs/ASSETS.md) for the mapping to supplied filenames. JPEG and MP4 exports are provided for browser access. Original presentation, PDF and CAD contents are retained where supplied.
-
-This repository documents project materials supplied by the portfolio owner. Team work and third-party design contributions should be credited as their roles are confirmed.
+![Project view 6](media/images/img-5578.jpg)
