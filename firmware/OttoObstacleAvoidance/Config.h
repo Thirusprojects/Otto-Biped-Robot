@@ -1,7 +1,8 @@
 #pragma once
 #include <Arduino.h>
 
-// Proposed wiring, NOT recovered from the original robot. Verify before enabling.
+// Servo D2-D5 matches the supplied legacy code; sensor D8/D9 is proposed.
+// Supplied Uno diagram differs. Verify actual Nano wiring before enabling.
 constexpr bool WIRING_CONFIRMED = false;
 constexpr uint8_t LEFT_LEG_PIN = 2;
 constexpr uint8_t RIGHT_LEG_PIN = 3;

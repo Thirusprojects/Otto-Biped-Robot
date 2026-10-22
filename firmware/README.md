@@ -4,7 +4,7 @@ This is newly written reference code, not the original project firmware. The ori
 
 ## Hardware and proposed wiring
 
-Use a classic 5 V Arduino Nano (ATmega328P), four appropriately powered servos and an **additional front HC-SR04**, assumed for this implementation. Confirm the robot's geometry is compatible with OttoDIY's two-leg/two-foot arrangement.
+Use a classic 5 V Arduino Nano (ATmega328P), four appropriately powered servos and a **front HC-SR04**, shown in the supplied circuit reference. Confirm the robot's geometry is compatible with OttoDIY's two-leg/two-foot arrangement.
 
 | Connection | Proposed Nano pin |
 |---|---|
@@ -16,6 +16,10 @@ Use a classic 5 V Arduino Nano (ATmega328P), four appropriately powered servos a
 | Optional buzzer, reserved | D13 |
 
 Power the servos from a regulated supply suitable for their voltage and combined stall current; share ground with the Nano and sensor. Do not power four servos from a Nano GPIO or assume USB can supply them. Check horn positions and mechanical travel before enabling outputs.
+
+## Supplied code versus circuit drawing
+
+The [supplied legacy example](reference/README.md) uses servo pins D2–D5, matching the default servo map below. Its ultrasonic pins depend on an unspecified legacy library. The [supplied diagram](../media/images/otto-circuit-reference.jpg) instead shows an **Uno**, servo signals D8–D11, HC-SR04 trigger D2 and echo D3. The physical project was reported as **Nano-based**. Do not combine these two maps: the default sensor D8/D9 pins remain proposed until actual wiring is confirmed. The drawing also connects servo power to the board's 5 V rail; use an appropriately rated servo supply for the actual build.
 
 ## Setup
 
